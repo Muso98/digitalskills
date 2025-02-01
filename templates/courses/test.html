@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-center">{{ test.title }}</h2>
+    <form id="test-form" method="post" action="{% url 'courses:course_test' course.slug test.id %}">
+        {% csrf_token %}
+        {% for item in questions_with_options %}
+        <div class="card p-3 mb-4">
+            <h5>{{ forloop.counter }}. {{ item.question.text }}</h5>
+            {% for option in item.options %}
+            <div class="form-check">
+                <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    name="question_{{ item.question.id }}" 
+                    value="{{ option }}" 
+                    id="question_{{ item.question.id }}_{{ forloop.counter }}_{{ forloop.counter0 }}">
+                <label class="form-check-label" for="question_{{ item.question.id }}_{{ forloop.counter }}_{{ forloop.counter0 }}">
+                    {{ option }}
+                </label>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        <button type="submit" id="submit-button" class="btn btn-success btn-lg w-100 mt-4">{% trans "Testni yakunlash" %}</button>
+    </form>
+</div>
+
+<script>
+    let formSubmitted = false; // Form yuborilganini kuzatish uchun flag
+
+    // Savollarning barcha javoblari belgilanganini tekshirish
+    const checkAnswers = () => {
+        const questions = document.querySelectorAll(".form-check-input");
+        const answeredQuestions = new Set();
+
+        questions.forEach((input) => {
+            if (input.checked) {
+                const questionId = input.name.split("_")[1];
+                answeredQuestions.add(questionId);
+            }
+        });
+
+        const totalQuestions = {{ questions_with_options|length }};
+        if (answeredQuestions.size !== totalQuestions) {
+            alert("You must answer all questions before submitting!");
+            return false; // Formani yuborishni to'xtatish
+        }
+
+        return true; // Barcha savollarga javob berilgan
+    };
+
+    // Form yuborilganda tekshirish
+    document.getElementById("test-form").addEventListener("submit", function (event) {
+        if (!checkAnswers()) {
+            event.preventDefault(); // Formani yuborishni to'xtatish
+        } else {
+            formSubmitted = true;
+        }
+    });
+
+    // Sahifadan chiqishni cheklash
+    window.addEventListener("beforeunload", function (event) {
+        if (!formSubmitted) {
+            event.preventDefault();
+            event.returnValue = ''; // Standart xabar ko'rsatish
+        }
+    });
+
+    // Brauzerning "Nazad" tugmasini cheklash
+    history.pushState(null, "", location.href);
+    window.addEventListener("popstate", function () {
+        if (!formSubmitted) {
+            history.pushState(null, "", location.href);
+            alert("You must complete the test before going back.");
+        }
+    });
+    .form-check-label {
+        font-size: 1.1rem;
+    }
+    h5 {
+        color: #333;
+        font-weight: bold;
+    }
+
+</script>
+{% endblock %}

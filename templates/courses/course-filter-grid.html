@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+<main>
+    <!-- Hero Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>{% trans "Mustaqil ta'lim" %}</h1>
+                    <p>{% trans "Tajribali, haqiqiy ekspertlarning kurslarini o'rganing." %}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Filter and Courses Section -->
+    <section class="py-lg-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <!-- Filter Sidebar -->
+
+                <!-- Courses Grid -->
+                <div class="col-xxl-9 col-lg-8 col-12">
+                    <div class="row gy-4">
+                        {% for course in courses %}
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="card shadow-sm position-relative" 
+                                style="
+                                    border-width: 3px; 
+                                    border-style: solid; 
+                                    {% if course.difficulty_level.name == 'easy' %}
+                                        border-color: green;
+                                    {% elif course.difficulty_level.name == 'medium' %}
+                                        border-color: orange;
+                                    {% elif course.difficulty_level.name == 'hard' %}
+                                        border-color: red;
+                                    {% endif %}
+                                ">
+                                <a href="{% url 'courses:course_single' course.slug %}">
+                                    <img src="{{ course.image.url }}" alt="{{ course.title }}" class="card-img-top img-fluid w-100" style="height: 200px; object-fit: cover;" />
+                                </a>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-primary text-white">{{ course.category.name }}</span>
+                                        <span class="text-muted">{{ course.rating|default:"0" }} ⭐</span>
+                                    </div>
+                                    <h5 class="mb-2">
+                                        <a href="{% url 'courses:course_single' course.slug %}" class="text-dark">{{ course.title }}</a>
+                                    </h5>
+                                    <p class="text-muted">{{ course.instructor }}</p>
+                            
+                                    <!-- Difficulty Badge -->
+                                    <span class="badge {% if course.difficulty_level.name == 'easy' %}bg-success
+                                                       {% elif course.difficulty_level.name == 'medium' %}bg-warning
+                                                       {% elif course.difficulty_level.name == 'hard' %}bg-danger
+                                                       {% endif %} text-white">
+                                        {{ course.difficulty_level.name|capfirst }}
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="mt-4">
+                        {% if is_paginated %}
+                        <nav>
+                            <ul class="pagination">
+                                {% if page_obj.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">{% trans "Orqaga" %}</a>
+                                </li>
+                                {% endif %}
+                                {% for num in paginator.page_range %}
+                                <li class="page-item {% if num == page_obj.number %}active{% endif %}">
+                                    <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                                </li>
+                                {% endfor %}
+                                {% if page_obj.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">{% trans "Keyingi" %}</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- Courses Grid End -->
+            </div>
+        </div>
+    </section>
+    <!-- Filter and Courses Section End -->
+</main>
+{% endblock %}

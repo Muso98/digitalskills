@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans 'Kurs topilmadi' %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1 class="display-4 text-danger">404</h1>
+        <h2>{% trans 'Kurs topilmadi' %}</h2>
+        <p>{% trans "Kechirasiz, siz izlayotgan kurs mavjud emas yoki olib tashlangan." %}</p>
+        <a href="{% url 'courses:course_list' %}" class="btn btn-primary">Back to Courses</a>
+    </div>
+</body>
+</html>
+{% endblock %}

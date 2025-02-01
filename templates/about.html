@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header text-center bg-primary text-white">
+                    <h2>{% trans "Biz haqimizda" %}</h2>
+                </div>
+                <div class="card-body">
+                    <h3>{% trans "DigitalSkills ga xush kelibsiz" %}</h3>
+                    <p>{% trans "Biz raqamli dunyoda mutaxassislarning keyingi avlodini kengaytirishga intilamiz. Bizning platformamiz talabalarga texnologiya, maʼlumotlar fanlari va boshqa sohalarda real dunyo koʻnikmalarini shakllantirishga yordam berish uchun moʻljallangan kurslar, oʻquv qoʻllanmalar va amaliy loyihalarni oʻz ichiga olgan keng turdagi taʼlim resurslarini taqdim etadi." %}</p>
+                    <p>{% trans "Bizning vazifamiz – dunyoning qayerida bo‘lishingizdan qat’i nazar, yuqori sifatli ta’limni hamma uchun ochiq qilishdir. Siz o'z bilimingizni oshirmoqchi bo'lgan talaba bo'lasizmi yoki texnologiya sohasidagi so'nggi tendentsiyalardan xabardor bo'lishni maqsad qilgan mutaxassismisiz, bizda muvaffaqiyatga erishish uchun zarur resurslar mavjud." %}</p>
+
+                    <h4>{% trans "Biz nima taklif qilamiz" %}:</h4>
+                    <ul>
+                        <li>{% trans "Online kurslar" %}</li>
+                        <li>{% trans "Loyihaga asoslangan ta'lim" %}</li>
+                        <li>{% trans "Haqiqiy dunyo misollari" %}</li>
+                        <li>{% trans "Sertifikatlar va nishonlar" %}</li>
+                        <li>{% trans "Mutaxassis yo'riqnomasi" %}</li>
+                    </ul>
+
+                    <h4>{% trans "Bizning Ko'zlagan Maqsadimiz" %}:</h4>
+                    <p>{% trans "Raqamli ta'lim sohasida global yetakchi bo'lish, odamlarga doimiy o'zgaruvchan dunyoda rivojlanish uchun zarur bo'lgan ko'nikmalarni taqdim etish." %}</p>
+
+                    <h4>{% trans "Biz bilan bog'lanish" %}:</h4>
+                    <p>{% trans "Agar sizda biron bir savol bo'lsa, biz bilan elektron pochta orqali bog'laning " %} <a href="mailto:support@digitalskills.com">support@digitalskills.com</a>.</p>
+                </div>
+                <div class="card-footer text-center">
+                    <p>&copy; {% trans "2025 DigitalSkills. Barcha huquqlar himoyalangan." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

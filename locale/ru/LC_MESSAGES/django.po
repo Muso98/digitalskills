@@ -1,0 +1,588 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-31 14:32+0500\n"
+"PO-Revision-Date: 2025-01-30 17:50+0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Uzbek <LL@li.org>\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\digitalskills\settings.py:93
+msgid "O‘zbekcha"
+msgstr "O‘zbek tili"
+
+#: .\digitalskills\settings.py:94
+msgid "Русский"
+msgstr "Rus tili"
+
+#: .\templates\about.html:9 .\templates\base.html:88 .\templates\base.html:218
+msgid "Biz haqimizda"
+msgstr "О нас"
+
+#: .\templates\about.html:12
+msgid "DigitalSkills ga xush kelibsiz"
+msgstr "Добро пожаловать в DigitalSkills"
+
+#: .\templates\about.html:13
+msgid ""
+"Biz raqamli dunyoda mutaxassislarning keyingi avlodini kengaytirishga "
+"intilamiz. Bizning platformamiz talabalarga texnologiya, maʼlumotlar fanlari "
+"va boshqa sohalarda real dunyo koʻnikmalarini shakllantirishga yordam berish "
+"uchun moʻljallangan kurslar, oʻquv qoʻllanmalar va amaliy loyihalarni oʻz "
+"ichiga olgan keng turdagi taʼlim resurslarini taqdim etadi."
+msgstr ""
+"Мы стремимся расширить следующее поколение специалистов в цифровом мире. "
+"Наша платформа предлагает широкий спектр образовательных ресурсов, включая "
+"курсы, учебные пособия и практические проекты, которые помогают студентам "
+"развивать реальные навыки в области технологий, науки о данных и других "
+"дисциплин."
+
+#: .\templates\about.html:14
+msgid ""
+"Bizning vazifamiz – dunyoning qayerida bo‘lishingizdan qat’i nazar, yuqori "
+"sifatli ta’limni hamma uchun ochiq qilishdir. Siz o'z bilimingizni "
+"oshirmoqchi bo'lgan talaba bo'lasizmi yoki texnologiya sohasidagi so'nggi "
+"tendentsiyalardan xabardor bo'lishni maqsad qilgan mutaxassismisiz, bizda "
+"muvaffaqiyatga erishish uchun zarur resurslar mavjud."
+msgstr ""
+"Наша миссия — сделать высококачественное образование доступным для всех, "
+"независимо от того, в какой точке мира вы находитесь. Являетесь ли вы "
+"студентом, желающим углубить свои знания, или профессионалом, стремящимся "
+"быть в курсе последних тенденций в области технологий», Если вы эксперт, у "
+"нас есть ресурсы, необходимые для вашего успеха"
+
+#: .\templates\about.html:16
+msgid "Biz nima taklif qilamiz"
+msgstr "Что мы предлагаем"
+
+#: .\templates\about.html:18
+msgid "Online kurslar"
+msgstr "Онлайн курсы"
+
+#: .\templates\about.html:19
+msgid "Loyihaga asoslangan ta'lim"
+msgstr "Обучение на основе проектов"
+
+#: .\templates\about.html:20
+msgid "Haqiqiy dunyo misollari"
+msgstr "Примеры из реального мира"
+
+#: .\templates\about.html:21
+msgid "Sertifikatlar va nishonlar"
+msgstr "Сертификаты и награды"
+
+#: .\templates\about.html:22
+msgid "Mutaxassis yo'riqnomasi"
+msgstr "Руководство экспертов"
+
+#: .\templates\about.html:25
+msgid "Bizning Ko'zlagan Maqsadimiz"
+msgstr "Наша цель"
+
+#: .\templates\about.html:26
+msgid ""
+"Raqamli ta'lim sohasida global yetakchi bo'lish, odamlarga doimiy "
+"o'zgaruvchan dunyoda rivojlanish uchun zarur bo'lgan ko'nikmalarni taqdim "
+"etish."
+msgstr ""
+"Стать мировым лидером в области цифрового образования, предоставляя людям "
+"навыки, необходимые для успеха в быстро меняющемся мире."
+
+#: .\templates\about.html:28 .\templates\base.html:221
+msgid "Biz bilan bog'lanish"
+msgstr "Свяжитесь с нами"
+
+#: .\templates\about.html:29
+msgid ""
+"Agar sizda biron bir savol bo'lsa, biz bilan elektron pochta orqali "
+"bog'laning "
+msgstr "Если у вас возникли вопросы, свяжитесь с нами по электронной почте."
+
+#: .\templates\about.html:32
+msgid "2025 DigitalSkills. Barcha huquqlar himoyalangan."
+msgstr "2025 DigitalSkills.Все права защищены."
+
+#: .\templates\base.html:46 .\templates\registration\logged_out.html:3
+msgid "Chiqish"
+msgstr "Выход"
+
+#: .\templates\base.html:49 .\templates\registration\forget-password.html:70
+#: .\templates\registration\sign-up.html:45
+msgid "Tizimga kirish"
+msgstr "Авторизоваться"
+
+#: .\templates\base.html:73
+msgid "Bosh sahifa"
+msgstr "Главная страница"
+
+#: .\templates\base.html:78 .\templates\base.html:92
+#: .\templates\courses\course-filter-grid.html:11
+msgid "Mustaqil ta'lim"
+msgstr "Самостоятельное обучение"
+
+#: .\templates\base.html:83
+msgid "Statistika"
+msgstr "Статистика"
+
+#: .\templates\base.html:96
+msgid "Biz bilan aloqa"
+msgstr "Связаться с нами"
+
+#: .\templates\base.html:112
+msgid "Til tanlang"
+msgstr "Выберите язык"
+
+#: .\templates\base.html:168
+msgid ""
+"Raqamli ta'lim sohasida global yetakchi bo'lish, odamlarga doimiy "
+"o'zgaruvchan dunyoda rivojlanish uchun zarur bo'lgan ko'nikmalarni taqdim "
+"etish"
+msgstr ""
+"Стать мировым лидером в области цифрового образования, предоставляя людям "
+"навыки, необходимые для успеха в быстро меняющемся мире."
+
+#: .\templates\base.html:187
+msgid "Mavzuni almashtirish"
+msgstr "Изменить тему"
+
+#: .\templates\base.html:193
+msgid "Yorqin"
+msgstr "Яркий"
+
+#: .\templates\base.html:199
+msgid "Qorong'i"
+msgstr "Темный"
+
+#: .\templates\base.html:205
+msgid "Auto"
+msgstr "Авто"
+
+#: .\templates\base.html:215
+msgid "Company"
+msgstr "Компания"
+
+#: .\templates\base.html:224
+msgid "Yangiliklar va Bloglar"
+msgstr "Новости и блоги"
+
+#: .\templates\base.html:227
+msgid "Karyera"
+msgstr "Карьера"
+
+#: .\templates\base.html:230
+msgid "Investorlar"
+msgstr "Инвесторы"
+
+#: .\templates\base.html:237
+msgid "Jamiyat"
+msgstr "Общество"
+
+#: .\templates\base.html:240
+msgid "Yordam va qo'llab-quvvatlash"
+msgstr "Помощь и поддержка"
+
+#: .\templates\base.html:243
+msgid "Hamkor"
+msgstr "Партнер"
+
+#: .\templates\base.html:246
+msgid "Blog"
+msgstr "Блог"
+
+#: .\templates\base.html:253
+msgid "O'qitish"
+msgstr "Преподавание"
+
+#: .\templates\base.html:256
+msgid "O'qituvchi bo'l"
+msgstr "Стать учителем"
+
+#: .\templates\base.html:259
+msgid "Qanday yo'l ko'rsatish kerak"
+msgstr "Как руководить"
+
+#: .\templates\base.html:262
+msgid "Hujjatlar"
+msgstr "Документы"
+
+#: .\templates\base.html:270
+msgid "Aloqa"
+msgstr "Контакт"
+
+#: .\templates\base.html:273
+msgid "Vaqt"
+msgstr "Время"
+
+#: .\templates\base.html:304
+msgid "Terms of use"
+msgstr "Условия эксплуатации"
+
+#: .\templates\base.html:305
+msgid "Cookies Settings"
+msgstr "Настройки файлов cookie"
+
+#: .\templates\base.html:306
+msgid "Privacy policy"
+msgstr "Политика конфиденциальности"
+
+#: .\templates\courses\course-filter-grid.html:12
+msgid "Tajribali, haqiqiy ekspertlarning kurslarini o'rganing."
+msgstr "Проходите курсы у опытных, настоящих экспертов."
+
+#: .\templates\courses\course-filter-grid.html:76
+#: .\templates\courses\course-single.html:47
+#: .\templates\courses\course-single.html:51 .\templates\courses\quiz.html:55
+msgid "Orqaga"
+msgstr "Назад"
+
+#: .\templates\courses\course-filter-grid.html:86
+#: .\templates\courses\course-single.html:58
+#: .\templates\courses\course-single.html:62
+msgid "Keyingi"
+msgstr "Следующий"
+
+#: .\templates\courses\course-single.html:19
+msgid "Sizning brauzeringiz video oynashni qo'llab-quvvatlamaydi."
+msgstr "Ваш браузер не поддерживает воспроизведение видео."
+
+#: .\templates\courses\course-single.html:25
+msgid "Faol bo'lim mavjud emas."
+msgstr "Активного раздела нет."
+
+#: .\templates\courses\course-single.html:35
+msgid "Tugallangan deb belgilang"
+msgstr "Отметить как выполненное"
+
+#: .\templates\courses\course-single.html:40
+msgid "Ushbu bo'lim uchun kontent mavjud emas."
+msgstr "В этом разделе нет контента."
+
+#: .\templates\courses\course-single.html:94
+msgid "Tavsif"
+msgstr "Описание"
+
+#: .\templates\courses\course-single.html:109
+msgid "Kurs tavsiflari"
+msgstr "Описание курса"
+
+#: .\templates\courses\course-single.html:194
+msgid "Tabriklaymiz!"
+msgstr "Поздравляем!"
+
+#: .\templates\courses\course-single.html:195
+msgid "Siz kursni tugatdingiz. Endi siz testdan o'tishingiz mumkin."
+msgstr "Вы завершили курс. Теперь вы можете пройти тест."
+
+#: .\templates\courses\course-single.html:207
+msgid "Kursni yakunlang"
+msgstr "Пройти курс"
+
+#: .\templates\courses\course-single.html:208
+msgid "Sinovga kirish uchun kursni yakunlashingiz kerak."
+msgstr "Для сдачи экзамена необходимо пройти курс."
+
+#: .\templates\courses\course-single.html:211
+msgid "O'rganishni davom ettiring"
+msgstr "Продолжайте учиться."
+
+#: .\templates\courses\course_not_found.html:10
+#: .\templates\courses\course_not_found.html:17
+#, fuzzy
+#| msgid "Kurs tavsiflari"
+msgid "Kurs topilmadi"
+msgstr "Описание курса"
+
+#: .\templates\courses\course_not_found.html:18
+msgid "Kechirasiz, siz izlayotgan kurs mavjud emas yoki olib tashlangan."
+msgstr "Извините, курс, который вы ищете, не существует или был удален."
+
+#: .\templates\courses\dashboard.html:5
+#, fuzzy
+#| msgid "Statistika"
+msgid "Statistika bo'limi"
+msgstr "Статистика"
+
+#: .\templates\courses\dashboard.html:12
+msgid "Foydalanuvchilar"
+msgstr "Пользователи"
+
+#: .\templates\courses\dashboard.html:20
+msgid "Muvaffaqiyatli tugatganlar"
+msgstr "Успешно завершившие"
+
+#: .\templates\courses\dashboard.html:28
+msgid "O'rtacha reyting"
+msgstr "Средний рейтинг"
+
+#: .\templates\courses\dashboard.html:40
+msgid "Kurslar bo'yicha tugatish statistikasi"
+msgstr "Статистика завершения по курсам"
+
+#: .\templates\courses\dashboard.html:48
+msgid "Foydalanuvchi faoliyati"
+msgstr "Активность пользователя"
+
+#: .\templates\courses\dashboard.html:60
+#, fuzzy
+#| msgid "Online kurslar"
+msgid "Jami kurslar"
+msgstr "Онлайн курсы"
+
+#: .\templates\courses\dashboard.html:68
+msgid "Umumiy ball"
+msgstr "Общая оценка"
+
+#: .\templates\courses\quiz.html:7
+msgid "Asosiy ma'lumotlar"
+msgstr "Основная информация"
+
+#: .\templates\courses\quiz.html:18
+msgid "Savollarga javob bering va o‘z ballingizni bilib oling!"
+msgstr "Ответьте на вопросы и узнайте свой результат!"
+
+#: .\templates\courses\quiz.html:29 .\templates\courses\test_result.html:33
+msgid "To'g'ri"
+msgstr "Правильный"
+
+#: .\templates\courses\quiz.html:33
+msgid "Yolg'on"
+msgstr "ЛОЖЬ"
+
+#: .\templates\courses\quiz.html:41 .\templates\help-center-support.html:61
+msgid "Yuborish"
+msgstr "Отправить"
+
+#: .\templates\courses\quiz.html:49
+msgid "Sizning natijangiz:"
+msgstr "Ваш результат:"
+
+#: .\templates\courses\test.html:26
+msgid "Testni yakunlash"
+msgstr "Пройдите тест"
+
+#: .\templates\courses\test_result.html:6
+msgid "Natijalari"
+msgstr "Результаты"
+
+#: .\templates\courses\test_result.html:10
+msgid "To'g'ri javoblar:"
+msgstr "Правильные ответы:"
+
+#: .\templates\courses\test_result.html:16
+msgid "Tavsiya:"
+msgstr "Рекомендация:"
+
+#: .\templates\courses\test_result.html:16
+#, fuzzy, python-format
+#| msgid ""
+#| "Sizning ballingiz 75 % dan past. Kurs mazmunini ko'rib chiqishni tavsiya "
+#| "qilamiz."
+msgid ""
+"Sizning ballingiz 75 %% dan past. Kurs mazmunini ko'rib chiqishni tavsiya "
+"qilamiz."
+msgstr "Ваш результат ниже 75 %. Рекомендуем ознакомиться с содержанием курса."
+
+#: .\templates\courses\test_result.html:24
+#: .\templates\courses\test_result.html:29
+msgid "Savol"
+msgstr "Вопрос"
+
+#: .\templates\courses\test_result.html:30
+msgid "Sizning javobingiz"
+msgstr "Ваш ответ"
+
+#: .\templates\courses\test_result.html:35
+msgid "Xato"
+msgstr "Ошибка"
+
+#: .\templates\courses\test_result.html:38
+msgid "Javob berilmagan"
+msgstr "Нет ответа"
+
+#: .\templates\courses\test_result.html:41
+msgid "To'g'ri javob"
+msgstr "Правильный ответ"
+
+#: .\templates\courses\test_result.html:50
+msgid "Kursga qaytish"
+msgstr "Вернуться к курсу"
+
+#: .\templates\help-center-support.html:33
+#, fuzzy
+#| msgid "Biz bilan bog'lanish"
+msgid "Biz bilan bog‘laning"
+msgstr "Свяжитесь с нами"
+
+#: .\templates\help-center-support.html:44
+msgid "So'rovingizni yuboring"
+msgstr "Отправьте запрос"
+
+#: .\templates\help-center-support.html:50
+msgid "Ismingiz"
+msgstr "Ваше имя"
+
+#: .\templates\help-center-support.html:58
+msgid "Muammo yoki so‘rovingiz"
+msgstr "Ваша проблема или запрос"
+
+#: .\templates\index.html:19
+msgid "Bugun o'quv sayohatingizni kengaytiring"
+msgstr "Расширьте свой образовательный путь сегодня"
+
+#: .\templates\index.html:24
+msgid "№1 Kurslarni o'rganish platformasi"
+msgstr "Платформа для обучения курсам №1"
+
+#: .\templates\index.html:25
+msgid ""
+"DigitalSkills-dan maksimal darajada foydalanishga yordam beradigan amaliy "
+"treninglar va sertifikatlar."
+msgstr ""
+"Практический подход «чтобы помочь вам извлечь максимальную пользу из "
+"DigitalSkills тренинги и сертификаты."
+
+#: .\templates\index.html:35
+msgid "Mutaxassis murabbiylar"
+msgstr "Руководство экспертов"
+
+#: .\templates\index.html:44
+msgid "Moslashuvchan ta'lim"
+msgstr "Гибкое обучение"
+
+#: .\templates\index.html:53
+msgid "Qo'llab-quvvatlovchi hamjamiyat"
+msgstr "Поддерживающее сообщество"
+
+#: .\templates\index.html:58
+msgid "Kurslarni o'rganing"
+msgstr "Исследуйте курсы"
+
+#: .\templates\index.html:74
+msgid "50 dan ortiq kurslar"
+msgstr "Более 50 курсов"
+
+#: .\templates\index.html:83
+msgid "Sertifikatlangan kurslar"
+msgstr "Сертифицированные курсы"
+
+#: .\templates\index.html:92
+msgid "Onlayn loyiha"
+msgstr "Онлайн проект"
+
+#: .\templates\index.html:139
+msgid "Biz bilan tayyorlanayotgan talabalar"
+msgstr "Студенты готовятся вместе с нами"
+
+#: .\templates\index.html:173
+msgid "12 500 dan ortiq ajoyib jamoalar ishonadi"
+msgstr "Нам доверяют более 12 500 замечательных сообществ"
+
+#: .\templates\registration\forget-password.html:26
+#: .\templates\registration\forget-password.html:41
+msgid "Parolni unutdingizmi?"
+msgstr "Забыли пароль?"
+
+#: .\templates\registration\forget-password.html:42
+msgid "Parolni tiklash uchun shaklni to'ldiring."
+msgstr "Заполните форму, чтобы сбросить пароль."
+
+#: .\templates\registration\forget-password.html:66
+msgid "Qayta tiklash havolasini yuboring"
+msgstr "Отправить ссылку для восстановления"
+
+#: .\templates\registration\logged_out.html:6
+msgid "Siz tizimdan chiqdingiz"
+msgstr "Вы вышли из системы."
+
+#: .\templates\registration\logged_out.html:7
+msgid "Qaytadan kiring"
+msgstr "Войдите снова."
+
+#: .\templates\registration\login.html:29
+msgid "Kirish | DigitalSkills"
+msgstr "Вход | DigitalSkills"
+
+#: .\templates\registration\login.html:43
+#: .\templates\registration\login.html:86
+msgid "Kirish"
+msgstr "Вход"
+
+#: .\templates\registration\login.html:45
+#: .\templates\registration\login.html:91
+msgid "Hisobingiz yo'qmi?"
+msgstr "У вас нет учетной записи?"
+
+#: .\templates\registration\login.html:46
+#: .\templates\registration\sign-up.html:42
+msgid "Ro'yxatdan o'tish"
+msgstr "Зарегистрироваться"
+
+#: .\templates\registration\login.html:78
+msgid "Meni eslab qol"
+msgstr "Запомнить меня."
+
+#: .\templates\registration\login.html:81
+msgid "Parolingiz esdan chiqdimi?"
+msgstr "Забыли пароль?"
+
+#: .\templates\registration\login.html:91
+msgid "Bu yerda roʻyxatdan oʻting"
+msgstr "Зарегистрируйтесь здесь"
+
+#: .\templates\registration\sign-up.html:44
+msgid "Hisobingiz bormi?"
+msgstr "У вас уже есть учетная запись?"
+
+#: .\templates\registration\sign-up.html:77
+msgid "Xizmat shartlari"
+msgstr "Условия использования"
+
+#: .\templates\registration\sign-up.html:78
+msgid "va"
+msgstr "и"
+
+#: .\templates\registration\sign-up.html:79
+msgid "Maxfiylik siyosati"
+msgstr "Политика конфиденциальности"
+
+#: .\templates\registration\sign-up.html:80
+msgid "ga roziman"
+msgstr "Я согласен с"
+
+#: .\templates\registration\sign-up.html:86
+msgid "Hisob yaratish"
+msgstr "Создать аккаунт"
+
+#~ msgid "Yuq"
+#~ msgstr "Нет"
+
+#~ msgid ""
+#~ "Bizning vazifamiz – dunyoning qayerida bo‘lishingizdan qat’i nazar, "
+#~ "yuqori sifatli ta’limni hamma uchun ochiq qilishdir."
+#~ msgstr ""
+#~ "Наша миссия – сделать качественное образование доступным для всех, "
+#~ "независимо от вашего местоположения."
+
+#~ msgid "Bog‘lanish"
+#~ msgstr "Связаться с нами"
+
+#~ msgid "Siz bilan bog‘lanishdan mamnunmiz!"
+#~ msgstr "Мы рады связаться с вами!"
+
+#~ msgid "Ism"
+#~ msgstr "Имя"
+
+#~ msgid "Email manzilingiz"
+#~ msgstr "Ваш адрес электронной почты"
+
+#~ msgid "Xabaringiz"
+#~ msgstr "Ваше сообщение"

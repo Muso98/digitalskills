@@ -1,0 +1,103 @@
+{% load static %}
+{% load user_filters %}
+{% load i18n %}
+{% block content %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Codescandy" />
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon/favicon.ico' %}" />
+
+    <!-- darkmode js -->
+    <script src="{% static 'js/vendors/darkMode.js' %}"></script>
+
+    <!-- Libs CSS -->
+    <link href="{% static 'fonts/feather/feather.css' %}" rel="stylesheet" />
+    <link href="{% static 'libs/bootstrap-icons/font/bootstrap-icons.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'libs/simplebar/dist/simplebar.min.css' %}" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{% static 'css/theme.min.css' %}" />
+
+    <title>Sign Up</title>
+</head>
+<body>
+    <!-- Page content -->
+    <main>
+        <section class="container d-flex flex-column vh-100">
+            <div class="row align-items-center justify-content-center g-0 h-lg-100 py-8">
+                <div class="col-lg-5 col-md-8 py-8 py-xl-0">
+                    <!-- Card -->
+                    <div class="card shadow">
+                        <!-- Card body -->
+                        <div class="card-body p-6 d-flex flex-column gap-4">
+                            <div>
+                                <a href="{% url 'home' %}"><img src="{% static 'images/brand/logo/output-onlinetools (1).webp' %}" class="mb-4" alt="logo" /></a>
+                                <div class="d-flex flex-column gap-1">
+                                    <h1 class="mb-0 fw-bold">{% trans "Ro'yxatdan o'tish" %}</h1>
+                                    <span>
+                                       {% trans "Hisobingiz bormi?" %}
+                                        <a href="{% url 'users:login' %}" class="ms-1">{% trans "Tizimga kirish" %}</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Form -->
+                            <form method="post" novalidate>
+                                {% csrf_token %}
+                                <!-- Username -->
+                                <div class="mb-3">
+                                    {{ form.username.label_tag }}
+                                    {{ form.username|add_class:"form-control" }}
+                                </div>
+                                <!-- Email -->
+                                <div class="mb-3">
+                                    {{ form.email.label_tag }}
+                                    {{ form.email|add_class:"form-control" }}
+                                </div>
+                                <!-- Password -->
+                                <div class="mb-3">
+                                    {{ form.password1.label_tag }}
+                                    {{ form.password1|add_class:"form-control" }}
+                                </div>
+                                <!-- Password Confirmation -->
+                                <div class="mb-3">
+                                    {{ form.password2.label_tag }}
+                                    {{ form.password2|add_class:"form-control" }}
+                                </div>
+                                <!-- Checkbox -->
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="agreeCheck" required />
+                                        <label class="form-check-label" for="agreeCheck">
+                                            <a href="#">{% trans "Xizmat shartlari" %}</a>
+                                            {% trans "va" %}
+                                            <a href="#">{% trans "Maxfiylik siyosati" %}</a>
+                                            {% trans "ga roziman" %}
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- Button -->
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary">{% trans "Hisob yaratish" %}</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="{% static 'libs/%40popperjs/core/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'libs/simplebar/dist/simplebar.min.js' %}"></script>
+    <script src="{% static 'js/theme.min.js' %}"></script>
+</body>
+</html>
+{% endblock %}

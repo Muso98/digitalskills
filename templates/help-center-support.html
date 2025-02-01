@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+  <body class="bg-white">
+    <div class="collapse" id="collapseExample">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-11 col-10">
+            <div class="py-4">
+              <form class="d-flex align-items-center">
+                <span class="position-absolute ps-3">
+                  <i class="fe fe-search"></i>
+                </span>
+                <input type="search" class="form-control ps-6 border-0 py-3 smooth-shadow-md" placeholder="Enter a question, topic or keyword" />
+              </form>
+            </div>
+          </div>
+          <div class="col-md-1 col-2">
+            <div>
+              <button type="button" class="btn-close" aria-label="Close" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section class="py-8 bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="offset-md-2 col-md-8 col-12">
+              <h1 class="fw-bold mb-0 display-4 lh-1">{% trans "Biz bilan bog‘laning" %}</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-8">
+        <div class="container my-lg-4">
+          <div class="row">
+            <div class="offset-md-2 col-md-8 col-12">
+              <div class="card border">
+                <div class="card-body p-5 d-flex flex-column gap-4">
+                  <h2 class="mb-0 fw-semibold">{% trans "So'rovingizni yuboring" %}</h2>
+
+                  <!-- Forma -->
+                  <form method="POST" class="needs-validation" novalidate>
+                      {% csrf_token %}
+                    <div class="mb-3">
+                      <label class="form-label" for="name">{% trans "Ismingiz" %}</label>
+                      {{ form.name }}
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="email">Email</label>
+                      {{ form.email }}
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="message">{% trans "Muammo yoki so‘rovingiz" %}</label>
+                      {{ form.message }}
+                    </div>
+                    <button class="btn btn-primary" type="submit">{% trans "Yuborish" %}</button>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+{% endblock %}

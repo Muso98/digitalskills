@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="container mt-5">
+    <!-- Asosiy ma'lumotlar (Admin tomonidan kiritilgan) -->
+    <div class="card mb-5 p-4">
+        <h3 class="text-center">{% trans "Asosiy ma'lumotlar" %}</h3>
+        <hr>
+        <div>
+            <!-- CKEditor orqali tahrirlangan matn -->
+            {{ quiz.description|safe }}
+        </div>
+    </div>
+
+    <!-- Viktorina (Savollar ro'yxati) -->
+    <div class="card p-4">
+        <h2 class="text-center">{{ quiz.title }}</h2>
+        <p class="text-center mb-4">{% trans "Savollarga javob bering va o‘z ballingizni bilib oling!" %}</p>
+
+        <form method="post">
+            {% csrf_token %}
+            <ul class="list-group">
+                {% for question in questions %}
+                <li class="list-group-item mb-3">
+                    <p class="mb-3">{{ question.text }}</p>
+                    <div class="row">
+                        <div class="col-md-6 text-end">
+                            <input type="radio" class="btn-check" id="question-{{ question.id }}-true" name="question_{{ question.id }}" value="true">
+                            <label for="question-{{ question.id }}-true" class="btn btn-outline-success">{% trans "To'g'ri" %}</label>
+                        </div>
+                        <div class="col-md-6 text-start">
+                            <input type="radio" class="btn-check" id="question-{{ question.id }}-false" name="question_{{ question.id }}" value="false">
+                            <label for="question-{{ question.id }}-false" class="btn btn-outline-danger">{% trans "Yolg'on" %}</label>
+                        </div>
+                    </div>
+
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary">{% trans "Yuborish" %}</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Natija ko'rsatish qismi -->
+    {% if result is not None %}
+    <div class="alert alert-info text-center mt-4">
+        <strong>{% trans "Sizning natijangiz:" %}</strong> {{ result.correct_answers }}/{{ result.total_questions }}
+    </div>
+    {% endif %}
+
+    <!-- Orqaga tugmasi -->
+    <div class="text-center mt-5">
+        <a href="{% url 'courses:course_single' quiz.section.course.slug %}" class="btn btn-secondary">⬅️{% trans "Orqaga" %}</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% load static %}
+{% load user_filters %}
+{% load i18n %}
+{% block content %}
+<!doctype html>
+<html lang="en">
+  
+<!-- Mirrored from geeksui.codescandy.com/geeks/pages/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Dec 2024 06:48:10 GMT -->
+<head>
+    <!-- Required meta tags -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="author" content="Codescandy" />
+
+<!-- Favicon icon-->
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon/favicon.ico' %}" />
+
+<!-- darkmode js -->
+<script src="{% static 'js/vendors/darkMode.js' %}"></script>
+
+<!-- Libs CSS -->
+<link href="{% static 'fonts/feather/feather.css" rel="stylesheet' %}" />
+<link href="{% static 'libs/bootstrap-icons/font/bootstrap-icons.min.css' %}" rel="stylesheet" />
+<link href="{% static 'libs/simplebar/dist/simplebar.min.css' %}" rel="stylesheet" />
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
+    <link rel="canonical" href="sign-in.html" />
+    <title>{% trans "Kirish | DigitalSkills" %}</title>
+  </head>    
+<section class="container d-flex flex-column vh-100">
+    <div class="row align-items-center justify-content-center g-0 h-lg-100 py-8">
+        <div class="col-lg-5 col-md-8 py-8 py-xl-0">
+            <!-- Card -->
+            <div class="card shadow">
+                <!-- Card body -->
+                <div class="card-body p-6 d-flex flex-column gap-4">
+                    <div>
+                        <a href="{% url 'users:home' %}">
+                            <img src="{% static 'images/brand/logo/output-onlinetools (1).webp' %}" class="mb-4" alt="logo-icon" />
+                        </a>
+                        <div class="d-flex flex-column gap-1">
+                            <h1 class="mb-0 fw-bold">{% trans "Kirish" %}</h1>
+                            <span>
+                                {% trans "Hisobingiz yo'qmi?" %}
+                                <a href="{% url 'users:signup' %}" class="ms-1">{% trans "Ro'yxatdan o'tish" %}</a>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Form -->
+                    <form method="POST" novalidate>
+                        {% csrf_token %}
+                        {% if form.errors %}
+                        <div class="alert alert-danger">
+                            <ul>
+                                {% for field, errors in form.errors.items %}
+                                    {% for error in errors %}
+                                    <li>{{ error }}</li>
+                                    {% endfor %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                        <!-- Username -->
+                        <div class="mb-3">
+                            {{ form.username.label_tag }}
+                            {{ form.username|add_class:"form-control" }}
+                        </div>
+                        <!-- Password -->
+                        <div class="mb-3">
+                            {{ form.password.label_tag }}
+                            {{ form.password|add_class:"form-control" }}
+                        </div>
+                        <!-- Checkbox -->
+                        <div class="d-lg-flex justify-content-between align-items-center mb-4">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberme" />
+                                <label class="form-check-label" for="rememberme">{% trans "Meni eslab qol" %}</label>
+                            </div>
+                            <div>
+                                <a href="{% url 'users:forget_password' %}">{% trans "Parolingiz esdan chiqdimi?" %}</a>
+                            </div>
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">{% trans "Kirish" %}</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <p>{% trans "Hisobingiz yo'qmi?" %} <a href="{% url 'users:signup' %}" class="text-success">{% trans "Bu yerda roʻyxatdan oʻting" %}</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  <!-- Scripts -->
+    <!-- Libs JS -->
+<script src="{% static 'libs/%40popperjs/core/dist/umd/popper.min.js' %}"></script>
+<script src="{% static 'libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'libs/simplebar/dist/simplebar.min.js' %}"></script>
+
+<!-- Theme JS -->
+<script src="{% static 'js/theme.min.js' %}"></script>
+
+    <script src="{% static 'js/vendors/validation.js' %}"></script>
+  </body>
+
+<!-- Mirrored from geeksui.codescandy.com/geeks/pages/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Dec 2024 06:48:11 GMT -->
+</html>    
+{% endblock %}

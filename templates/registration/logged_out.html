@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Chiqish" %}{% endblock %}
+
+{% block content %}
+<h1>{% trans "Siz tizimdan chiqdingiz" %}</h1>
+<a href="{% url 'login' %}" class="btn btn-primary mt-3">{% trans "Qaytadan kiring" %}</a>
+{% endblock %}

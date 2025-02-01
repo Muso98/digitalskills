@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-5">"{% trans "Statistika bo'limi" %}"</h2>
+
+    <!-- Statistika kartalari -->
+    <div class="row mb-5">
+        <div class="col-md-4">
+            <div class="card text-center bg-info text-white">
+                <div class="card-body">
+                    <h5 class="card-title">{% trans "Foydalanuvchilar" %}</h5>
+                    <p class="card-text display-4">{{ total_users }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center bg-success text-white">
+                <div class="card-body">
+                    <h5 class="card-title">{% trans "Muvaffaqiyatli tugatganlar" %}</h5>
+                    <p class="card-text display-4">{{ completed_students }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center bg-warning text-dark">
+                <div class="card-body">
+                    <h5 class="card-title">{% trans "O'rtacha reyting" %}</h5>
+                    <p class="card-text display-4">{{ avg_rating }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Diagrammalar -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{% trans "Kurslar bo'yicha tugatish statistikasi" %}</h5>
+                    <canvas id="completionChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{% trans "Foydalanuvchi faoliyati" %}</h5>
+                    <canvas id="userActivityChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Yana bir ko'rsatkich -->
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="card text-center bg-primary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">{% trans "Jami kurslar" %}</h5>
+                    <p class="card-text display-4">{{ total_courses }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card text-center bg-secondary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">{% trans "Umumiy ball" %}</h5>
+                    <p class="card-text display-4">{{ total_scores }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Kurslar bo'yicha tugatish statistikasi
+    const completionCtx = document.getElementById('completionChart').getContext('2d');
+    const completionChart = new Chart(completionCtx, {
+        type: 'bar',
+        data: {
+            labels: {{ course_titles|safe }}, // Kurslar nomi
+            datasets: [{
+                label: 'Tugatgan talabalar soni',
+                data: {{ completion_data|safe }}, // Har bir kurs bo‘yicha tugatganlar soni
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false }
+            }
+        }
+    });
+
+    // Foydalanuvchi faoliyati statistikasi
+    const userActivityCtx = document.getElementById('userActivityChart').getContext('2d');
+    const userActivityChart = new Chart(userActivityCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Faol foydalanuvchilar', 'Kam faol foydalanuvchilar', 'Yangi foydalanuvchilar'],
+            datasets: [{
+                data: {{ user_activity_data|safe }},
+                backgroundColor: ['#28a745', '#ffc107', '#007bff']
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,248 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+{% load course_filters %}
+    
+  <body>
+    <main>
+      <section class="p-lg-5 py-7">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-12 mb-5">
+              <div class="rounded-3 position-relative w-100 d-block overflow-hidden p-0" style="height: 600px">
+                    {% if active_section.video_file %}
+                        {% if active_section %}
+                        <video id="active-video" class="position-absolute top-0 end-0 start-0 end-0 bottom-0 h-100 w-100" 
+                               controls onended="document.getElementById('complete-section-form').submit()">
+                            <source src="{{ active_section.video_file.url }}" type="video/mp4">
+                            {% trans "Sizning brauzeringiz video oynashni qo'llab-quvvatlamaydi." %}
+                        </video>
+                        <form id="complete-section-form" method="post" action="{% url 'courses:complete_section' active_section.id %}">
+                            {% csrf_token %}
+                        </form>
+                        {% else %}
+                        <p>{% trans "Faol bo'lim mavjud emas." %}</p>
+                        {% endif %}
+                    {% elif active_section.additional_info %}
+                        <!-- Agar video mavjud bo'lmasa, additional_info chiqariladi -->
+                        <div class="p-4 w-100 h-100 overflow-auto" style="background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                            <div style="font-size: 16px; line-height: 1.6; text-align: justify;">
+                                {{ active_section.additional_info|safe }}
+                            </div>
+                            <form method="post" action="{% url 'courses:complete_section' active_section.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary mt-3">{% trans "Tugallangan deb belgilang" %}</button>
+                            </form>
+                        </div>
+                    {% else %}
+                        <!-- Video ham, additional_info ham mavjud bo'lmasa -->
+                        <p class="text-center my-3">{% trans "Ushbu bo'lim uchun kontent mavjud emas." %}</p>
+                    {% endif %}
+              </div>
+               <div class="d-flex justify-content-between mt-3">
+                    {% if previous_section %}
+                    <a href="{% url 'courses:course_single_section' course.slug previous_section.id %}" 
+                       class="btn btn-outline-primary">
+                        <i class="bi bi-arrow-left-circle"></i> {% trans "Orqaga" %}
+                    </a>
+                    {% else %}
+                    <button class="btn btn-outline-secondary" disabled>
+                        <i class="bi bi-arrow-left-circle"></i> {% trans "Orqaga" %}
+                    </button>
+                    {% endif %}
+                
+                    {% if next_section %}
+                    <a href="{% url 'courses:course_single_section' course.slug next_section.id %}" 
+                       class="btn btn-outline-primary ms-auto">
+                        {% trans "Keyingi" %} <i class="bi bi-arrow-right-circle"></i>
+                    </a>
+                    {% else %}
+                    <button class="btn btn-outline-secondary ms-auto" disabled>
+                        {% trans "Keyingi" %} <i class="bi bi-arrow-right-circle"></i>
+                    </button>
+                    {% endif %}
+               </div>
+            </div>
+          </div>
+          <!-- Content -->
+          <div class="row">
+            <div class="col-xl-8 col-lg-12 col-md-12 col-12 mb-4 mb-xl-0">
+              <!-- Card -->
+              <div class="card mb-5">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <h1 id="active-video-title" class="fw-semibold mb-2">
+                                        {{ active_section.title }}
+                    </h1>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <div class="d-flex align-items-center">
+                      <div class="ms-2 lh-1">
+                        <h4 class="mb-1">{{ course.instructor.name }}</h4>
+                      </div>
+                    </div>
+                    <div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Nav tabs -->
+                <ul class="nav nav-lt-tab" id="tab" role="tablist">
+                  <!-- Nav item -->
+                  <li class="nav-item">
+                    <a class="nav-link active" id="description-tab" data-bs-toggle="pill" href="#description" role="tab" aria-controls="description" aria-selected="false">{% trans "Tavsif" %}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="faq-tab" data-bs-toggle="pill" href="#faq" role="tab" aria-controls="faq" aria-selected="false">FAQ</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- Card -->
+              <div class="card rounded-3">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="tab-content" id="tabContent">
+                    <!-- Tab pane -->
+                    <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                      <div class="mb-4">
+                        <h3 class="mb-2"> {% trans "Kurs tavsiflari" %}</h3>
+                        <p id="active-video-content">{{ active_section.content }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-12 col-md-12 col-12">
+              <div class="card" id="courseAccordion">
+                <div>
+                  <!-- List group -->
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item p-0 bg-transparent">
+                      <!-- Toggle -->
+                      <a class="h4 mb-0 d-flex align-items-center py-3 px-4" data-bs-toggle="collapse" href="#courseTwo" role="button" aria-expanded="false" aria-controls="courseTwo">
+                        <div class="me-auto">
+                            {{course.title}}                          
+                            <p class="mb-0 fs-6 mt-1 fw-normal"> {{ course.total_duration  }}</p>
+                        </div>
+                        <!-- Chevron -->
+                        <span class="chevron-arrow ms-4">
+                          <i class="fe fe-chevron-down fs-4"></i>
+                        </span>
+                      </a>
+                      <!-- Row -->
+                      <!-- Collapse -->
+                      <div class="collapse show" id="courseTwo" data-bs-parent="#courseAccordion">
+                        <!-- List group item -->
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                          </li>
+                          <!-- List group item -->  
+                               <!-- Bo'limlar ro'yxati -->
+                                <ul class="list-group list-group-flush">
+                                    {% for section in course.sections.all %}
+                                    <li id="section-{{ section.id }}" class="list-group-item">
+                                        <a href="{% url 'courses:course_single_section' course.slug section.id %}" 
+                                           class="d-flex justify-content-between align-items-center 
+                                           {% if section_progress|dict_get:section.id %}text-inherit{% else %}text-muted{% endif %}"
+                                           {% if not section_progress|dict_get:section.id %}
+                                           style="pointer-events: none; cursor: not-allowed;"
+                                           {% endif %}>
+                                            <div class="text-truncate">
+                                                <span class="icon-shape 
+                                                    {% if section_progress|dict_get:section.id %}bg-success{% else %}bg-secondary{% endif %} 
+                                                    text-white icon-sm rounded-circle me-2">
+                                                    {% if section.video_file %}
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
+                                                        </svg>
+                                                    {% endif %}
+                                                </span>
+                                                <span>{{ section.title }}</span>
+                                            </div>
+                                        </a>
+                                        <!-- Viktorinani joylashtirish -->
+                                        {% if section.quizzes.exists %}
+                                        <ul class="list-group mt-2 ms-4">
+                                            {% for quiz in section.quizzes.all %}
+                                            <li class="list-group-item border-0 p-0">
+                                                <a href="{% url 'courses:quiz_view' course.slug quiz.id %}" class="btn btn-warning btn-sm mt-2">
+                                                    <i class="bi bi-question-circle"></i> {{ quiz.title }}
+                                                </a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                        {% endif %}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+            {% if is_completed %}
+                {% if tests %}
+                    <div class="alert alert-success d-flex justify-content-between align-items-center" role="alert">
+                        <div>
+                            <h5 class="mb-0">{% trans "Tabriklaymiz!" %}</h5>
+                            <p class="mb-0">{% trans "Siz kursni tugatdingiz. Endi siz testdan o'tishingiz mumkin." %}</p>
+                        </div>
+                        <a href="{% url 'courses:course_test' course.slug tests.first.id %}" class="btn btn-primary">
+                            Take Test
+                            <i class="bi bi-arrow-right-circle ms-2"></i>
+                        </a>
+                    </div>
+                {% else %}
+                {% endif %}
+            {% else %}
+                <div class="alert alert-warning d-flex justify-content-between align-items-center" role="alert">
+                    <div>
+                        <h5 class="mb-0">{% trans "Kursni yakunlang" %}</h5>
+                        <p class="mb-0">{% trans "Sinovga kirish uchun kursni yakunlashingiz kerak." %}</p>
+                    </div>
+                    <a href="#course-content" class="btn btn-outline-secondary">
+                        {% trans "O'rganishni davom ettiring" %}
+                        <i class="bi bi-arrow-right-circle ms-2"></i>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+      </section>
+    </main>
+   <!-- JavaScript -->
+  <script>
+    function switchContent(url, type, title, content) {
+        const mediaElement = document.querySelector('.rounded-3.position-relative'); // Media joylashgan element
+        const videoTitleElement = document.getElementById('active-video-title'); // Sarlavha uchun element
+        const videoContentElement = document.getElementById('active-video-content'); // Matn joylashgan element
+    
+        // Sarlavha va kontentni yangilash
+        videoTitleElement.textContent = title;
+        videoContentElement.textContent = ""; // Matnni tozalash (video uchun kerak emas)
+    
+        // Media turini aniqlash
+        if (type === 'video') {
+            mediaElement.innerHTML = `
+                <video class="position-absolute top-0 end-0 start-0 end-0 bottom-0 h-100 w-100" controls>
+                    <source src="${url}" type="video/mp4">
+                    Sizning brauzeringiz video oynashni qo'llab-quvvatlamaydi.
+                </video>
+            `;
+        } else if (type === 'text') {
+            mediaElement.innerHTML = `
+                <div class="p-4 h-100 w-100" style="background: #f8f9fa; overflow-y: auto; max-height: 600px;">
+                    <p>${content}</p>
+                </div>
+            `;
+        }
+    }
+  </script>
+   
+  {% endblock %}

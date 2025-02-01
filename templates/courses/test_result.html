@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load course_filters %}
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-center mb-4">{{ test.title }} {% trans "Natijalari" %}</h2>
+
+    <div class="card mb-4">
+        <div class="card-body text-center">
+            <h4>{% trans "To'g'ri javoblar:" %} <span class="text-success">{{ correct_answers }}</span> / {{ total_questions }}</h4>
+            <h4>Score: <span class="text-primary">{{ score }}%</span></h4>
+        </div>
+    </div>
+    {% if score < 75 %}
+    <div class="alert alert-warning text-center">
+        <strong>{% trans "Tavsiya:" %}</strong> {% trans "Sizning ballingiz 75 % dan past. Kurs mazmunini ko'rib chiqishni tavsiya qilamiz." %}
+    </div>
+    {% endif %}
+    <div class="accordion" id="questionsAccordion">
+        {% for question in questions %}
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{ question.id }}">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ question.id }}" aria-expanded="true" aria-controls="collapse{{ question.id }}">
+                    {% trans "Savol" %} {{ forloop.counter }}
+                </button>
+            </h2>
+            <div id="collapse{{ question.id }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" aria-labelledby="heading{{ question.id }}" data-bs-parent="#questionsAccordion">
+                <div class="accordion-body">
+                    <p><strong>{% trans "Savol" %}:</strong> {{ question.text }}</p>
+                    <p><strong>{% trans "Sizning javobingiz" %}:</strong> 
+                        {% if answers|get_item:question.id %}
+                            {% if answers|get_item:question.id == question.correct_answer %}
+                                <span class="text-success">{{ answers|get_item:question.id }} ({% trans "To'g'ri" %})</span>
+                            {% else %}
+                                <span class="text-danger">{{ answers|get_item:question.id }} ({% trans "Xato" %})</span>
+                            {% endif %}
+                        {% else %}
+                            <span class="text-warning">{% trans "Javob berilmagan" %}</span>
+                        {% endif %}
+                    </p>
+                    <p><strong>{% trans "To'g'ri javob" %}:</strong> <span class="text-primary">{{ question.correct_answer }}</span></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'courses:course_single' course.slug %}" class="btn btn-secondary btn-lg">
+            {% trans "Kursga qaytish" %}
+        </a>
+    </div>
+</div>
+
+<script>
+    // Brauzer tarixi bilan ishlash
+    function preventBackNavigation() {
+        history.pushState(null, "", location.href); // Tarixga yangi yozuv qo'shish
+    }
+
+    // "Nazad" tugmasi uchun qayta yo'naltirish
+    window.addEventListener("popstate", function () {
+        alert("You cannot go back from the results page.");
+        preventBackNavigation(); // Foydalanuvchini yana natijalar sahifasiga qaytarish
+    });
+
+    // Dastlab tarixi qo‘shish
+    preventBackNavigation();
+</script>
+{% endblock %}
