@@ -79,6 +79,7 @@ yarl = "==1.18.3"
 dj-database-url = "*"
 django-ckeditor-5 = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 
