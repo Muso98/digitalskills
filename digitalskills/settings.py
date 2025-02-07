@@ -6,6 +6,7 @@ import dj_database_url
 # .env faylni yuklash
 load_dotenv()
 
+DEBUG=True
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,11 +14,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 import os
 
 
-ALLOWED_HOSTS = [
-    "digitalskills.onrender.com",  # Render-da joylangan domeningiz
-    "127.0.0.1",  # Lokal ishlashi uchun
-    "localhost"
-]
+ALLOWED_HOSTS = ['digitalskills.onrender.com', 'localhost', '127.0.0.1']
+
 
 CSRF_TRUSTED_ORIGINS = [
     "https://digitalskills.onrender.com",  # Render yoki hosting domeningiz
