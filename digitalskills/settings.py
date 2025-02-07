@@ -2,18 +2,14 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 from django.utils.translation import gettext_lazy as _
-
+import dj_database_url
 # .env faylni yuklash
 load_dotenv()
 
-# OpenAI API kaliti
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-2#gx$-o=86y=kht-jz^vi19hsdpqmtz((24z9i#hr=8igzj++h'
-
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -64,16 +60,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'digitalskills.wsgi.application'
 
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'digitalskills'),
-        'USER': os.getenv('DB_USER', 'digitalskills'),
-        'PASSWORD': os.getenv('DB_PASSWORD', '12345'),  # Parolni .env dan olish yaxshiroq
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL', 'postgres://digitalskills:12345@localhost:5432/digitalskills')
+    )
 }
+
 
 
 AUTH_PASSWORD_VALIDATORS = [

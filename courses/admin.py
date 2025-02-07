@@ -2,6 +2,7 @@ from django.contrib import admin, messages
 from django.shortcuts import render, redirect
 from django.urls import path, reverse
 from django.utils.html import format_html
+from django.utils.text import slugify
 from django.core.exceptions import ValidationError
 from modeltranslation.admin import TranslationAdmin
 from .models import Course, CourseSection, Instructor, Category, Path, CourseTest, CourseProgress, Question, Settings, DifficultyLevel, Quiz, QuizQuestion, QuizResult

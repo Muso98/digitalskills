@@ -2,6 +2,7 @@ from django.utils.translation import gettext as _
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+from django.utils.text import slugify
 from django.contrib import messages
 from django.http import JsonResponse, Http404
 from .models import Course, CourseSection, CourseTest, Question, CourseProgress, DifficultyLevel, CourseSectionProgress, Quiz, QuizQuestion, QuizResult
@@ -12,7 +13,6 @@ from datetime import datetime, timedelta
 from django.db.models import Count, Avg, Sum
 from django.utils.translation import get_language
 import random
-import slug
 
 
 

@@ -1,14 +1,13 @@
 from django.db import models
-import os
-import cv2
-from ckeditor.fields import RichTextField
 from django.utils.text import slugify
+from ckeditor.fields import RichTextField
 from django.conf import settings
 from django.db.models.signals import pre_save
 from django.core.exceptions import ValidationError
 from django.dispatch import receiver
 from django.utils.translation import gettext_lazy as _
-
+import os
+import cv2
 
 def get_video_duration_opencv(file_path):
     try:
