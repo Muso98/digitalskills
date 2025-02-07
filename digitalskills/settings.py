@@ -6,7 +6,7 @@ import dj_database_url
 # .env faylni yuklash
 load_dotenv()
 
-DEBUG=True
+DEBUG=False
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
