@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-31 14:32+0500\n"
+"POT-Creation-Date: 2025-02-07 15:06+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\digitalskills\settings.py:93
+#: .\digitalskills\settings.py:95
 msgid "O‘zbekcha"
 msgstr "O‘zbekcha"
 
-#: .\digitalskills\settings.py:94
+#: .\digitalskills\settings.py:96
 msgid "Русский"
 msgstr "Русский"
 
-#: .\templates\about.html:9 .\templates\base.html:88 .\templates\base.html:218
+#: .\templates\about.html:9 .\templates\base.html:88 .\templates\base.html:224
 msgid "Biz haqimizda"
 msgstr "Biz haqimizda"
 
@@ -108,7 +108,7 @@ msgstr ""
 "o'zgaruvchan dunyoda rivojlanish uchun zarur bo'lgan ko'nikmalarni taqdim "
 "etish."
 
-#: .\templates\about.html:28 .\templates\base.html:221
+#: .\templates\about.html:28 .\templates\base.html:227
 msgid "Biz bilan bog'lanish"
 msgstr "Biz bilan bog'lanish"
 
@@ -164,87 +164,87 @@ msgstr ""
 "o'zgaruvchan dunyoda rivojlanish uchun zarur bo'lgan ko'nikmalarni taqdim "
 "etish"
 
-#: .\templates\base.html:187
+#: .\templates\base.html:193
 msgid "Mavzuni almashtirish"
 msgstr "Mavzuni almashtirish"
 
-#: .\templates\base.html:193
+#: .\templates\base.html:199
 msgid "Yorqin"
 msgstr "Yorqin"
 
-#: .\templates\base.html:199
+#: .\templates\base.html:205
 msgid "Qorong'i"
 msgstr "Qorong'i"
 
-#: .\templates\base.html:205
+#: .\templates\base.html:211
 msgid "Auto"
 msgstr "Auto"
 
-#: .\templates\base.html:215
+#: .\templates\base.html:221
 msgid "Company"
 msgstr "Company"
 
-#: .\templates\base.html:224
+#: .\templates\base.html:230
 msgid "Yangiliklar va Bloglar"
 msgstr "Yangiliklar va Bloglar"
 
-#: .\templates\base.html:227
+#: .\templates\base.html:233
 msgid "Karyera"
 msgstr "Karyera"
 
-#: .\templates\base.html:230
+#: .\templates\base.html:236
 msgid "Investorlar"
 msgstr "Investorlar"
 
-#: .\templates\base.html:237
+#: .\templates\base.html:243
 msgid "Jamiyat"
 msgstr "Jamiyat"
 
-#: .\templates\base.html:240
+#: .\templates\base.html:246
 msgid "Yordam va qo'llab-quvvatlash"
 msgstr "Yordam va qo'llab-quvvatlash"
 
-#: .\templates\base.html:243
+#: .\templates\base.html:249
 msgid "Hamkor"
 msgstr "Hamkor"
 
-#: .\templates\base.html:246
+#: .\templates\base.html:252
 msgid "Blog"
 msgstr "Blog"
 
-#: .\templates\base.html:253
+#: .\templates\base.html:259
 msgid "O'qitish"
 msgstr "O'qitish"
 
-#: .\templates\base.html:256
+#: .\templates\base.html:262
 msgid "O'qituvchi bo'l"
 msgstr "O'qituvchi bo'l"
 
-#: .\templates\base.html:259
+#: .\templates\base.html:265
 msgid "Qanday yo'l ko'rsatish kerak"
 msgstr "Qanday yo'l ko'rsatish kerak"
 
-#: .\templates\base.html:262
+#: .\templates\base.html:268
 msgid "Hujjatlar"
 msgstr "Hujjatlar"
 
-#: .\templates\base.html:270
+#: .\templates\base.html:276
 msgid "Aloqa"
 msgstr "Aloqa"
 
-#: .\templates\base.html:273
+#: .\templates\base.html:279
 msgid "Vaqt"
 msgstr "Vaqt"
 
-#: .\templates\base.html:304
+#: .\templates\base.html:310
 msgid "Terms of use"
 msgstr "Terms of use"
 
-#: .\templates\base.html:305
+#: .\templates\base.html:311
 msgid "Cookies Settings"
 msgstr "Cookies Settings"
 
-#: .\templates\base.html:306
+#: .\templates\base.html:312
 msgid "Privacy policy"
 msgstr "Privacy policy"
 
@@ -443,52 +443,57 @@ msgid "Muammo yoki so‘rovingiz"
 msgstr "Muammo yoki so‘rovingiz"
 
 #: .\templates\index.html:19
-msgid "Bugun o'quv sayohatingizni kengaytiring"
-msgstr "Bugun o'quv sayohatingizni kengaytiring"
+#, fuzzy
+#| msgid "DigitalSkills ga xush kelibsiz"
+msgid "Digital Skills-ga xush kelibsiz !"
+msgstr "DigitalSkills ga xush kelibsiz"
 
 #: .\templates\index.html:24
-msgid "№1 Kurslarni o'rganish platformasi"
-msgstr "№1 Kurslarni o'rganish platformasi"
+msgid ""
+"📚 Ta'limda raqamli texnologiyalarni o'zlashtiring va professional bo'ling!"
+msgstr ""
 
 #: .\templates\index.html:25
-msgid ""
-"DigitalSkills-dan maksimal darajada foydalanishga yordam beradigan amaliy "
-"treninglar va sertifikatlar."
+msgid "🚀 Siz nimalarga ega bo'lasiz?"
 msgstr ""
-"DigitalSkills-dan maksimal darajada foydalanishga yordam beradigan amaliy "
-"treninglar va sertifikatlar."
 
 #: .\templates\index.html:35
-msgid "Mutaxassis murabbiylar"
-msgstr "Mutaxassis murabbiylar"
+msgid "Fan bo'yicha elektron manbalarga"
+msgstr ""
 
 #: .\templates\index.html:44
-msgid "Moslashuvchan ta'lim"
-msgstr "Moslashuvchan ta'lim"
+msgid "Qiziqarli vazifalar va keyslar bilan amaliy mashg'ulotlar"
+msgstr ""
 
 #: .\templates\index.html:53
-msgid "Qo'llab-quvvatlovchi hamjamiyat"
-msgstr "Qo'llab-quvvatlovchi hamjamiyat"
+msgid "Raqamli texnologiyalar haqida ko'proq ma'lumot olish imkoniyati"
+msgstr ""
 
 #: .\templates\index.html:58
 msgid "Kurslarni o'rganing"
 msgstr "Kurslarni o'rganing"
 
 #: .\templates\index.html:74
-msgid "50 dan ortiq kurslar"
-msgstr "50 dan ortiq kurslar"
+msgid "Raqamli texnologiyalar ta'limni qanday o'zgartirmoqda"
+msgstr ""
 
 #: .\templates\index.html:83
-msgid "Sertifikatlangan kurslar"
-msgstr "Sertifikatlangan kurslar"
+msgid ""
+" Interaktiv darslar, onlayn kurslar va multimedia loyihalarini qanday "
+"yaratish mumkin"
+msgstr ""
 
 #: .\templates\index.html:92
-msgid "Onlayn loyiha"
-msgstr "Onlayn loyiha"
+msgid " Sun'iy intellekt, virtual laboratoriyalar va gamifikatsiya asoslari"
+msgstr ""
+
+#: .\templates\index.html:138
+msgid "Bizga qo`shiling"
+msgstr ""
 
 #: .\templates\index.html:139
-msgid "Biz bilan tayyorlanayotgan talabalar"
-msgstr "Biz bilan tayyorlanayotgan talabalar"
+msgid " Raqamli ta'limga qo'shiling va sayohatingizni boshlang!"
+msgstr ""
 
 #: .\templates\index.html:173
 msgid "12 500 dan ortiq ajoyib jamoalar ishonadi"
@@ -569,6 +574,40 @@ msgstr "ga roziman"
 #: .\templates\registration\sign-up.html:86
 msgid "Hisob yaratish"
 msgstr "Hisob yaratish"
+
+#~ msgid "Bugun o'quv sayohatingizni kengaytiring"
+#~ msgstr "Bugun o'quv sayohatingizni kengaytiring"
+
+#~ msgid "№1 Kurslarni o'rganish platformasi"
+#~ msgstr "№1 Kurslarni o'rganish platformasi"
+
+#~ msgid ""
+#~ "DigitalSkills-dan maksimal darajada foydalanishga yordam beradigan amaliy "
+#~ "treninglar va sertifikatlar."
+#~ msgstr ""
+#~ "DigitalSkills-dan maksimal darajada foydalanishga yordam beradigan amaliy "
+#~ "treninglar va sertifikatlar."
+
+#~ msgid "Mutaxassis murabbiylar"
+#~ msgstr "Mutaxassis murabbiylar"
+
+#~ msgid "Moslashuvchan ta'lim"
+#~ msgstr "Moslashuvchan ta'lim"
+
+#~ msgid "Qo'llab-quvvatlovchi hamjamiyat"
+#~ msgstr "Qo'llab-quvvatlovchi hamjamiyat"
+
+#~ msgid "50 dan ortiq kurslar"
+#~ msgstr "50 dan ortiq kurslar"
+
+#~ msgid "Sertifikatlangan kurslar"
+#~ msgstr "Sertifikatlangan kurslar"
+
+#~ msgid "Onlayn loyiha"
+#~ msgstr "Onlayn loyiha"
+
+#~ msgid "Biz bilan tayyorlanayotgan talabalar"
+#~ msgstr "Biz bilan tayyorlanayotgan talabalar"
 
 #~ msgid "Yuq"
 #~ msgstr "Yuq"

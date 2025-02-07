@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-30 17:44+0500\n"
+"POT-Creation-Date: 2025-02-07 14:40+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,39 +16,36 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
-"(n%100>=11 && n%100<=14)? 2 : 3);\n"
-#: .\courses\views.py:32
-msgid "Mos keluvchi kurslar topilmadi."
-msgstr ""
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\courses\views.py:119
+#: .\courses\views.py:134
 msgid "Bo'lim tugallandi! Endi keyingi darsga kirishingiz mumkin."
-msgstr ""
+msgstr "Глава завершена! Теперь вы можете перейти к следующему уроку."
 
-#: .\courses\views.py:123
+#: .\courses\views.py:138
 msgid "Bo'lim tugallandi! Siz kursni tugatdingiz."
-msgstr ""
+msgstr "Глава завершена! Вы завершили курс."
 
-#: .\courses\views.py:155
+#: .\courses\views.py:170
 msgid "Javobingiz saqlandi."
-msgstr ""
+msgstr "Ваш ответ сохранен."
 
-#: .\courses\views.py:183
+#: .\courses\views.py:199
 msgid "Siz testni tugatmadingiz!"
-msgstr ""
+msgstr "Вы не закончили тест!"
 
-#: .\courses\views.py:197
+#: .\courses\views.py:222
 #, python-format
 msgid ""
 "Sizning ballingiz 75% dan past. Kursni ko'rib chiqishni tavsiya qilamiz."
-msgstr ""
+msgstr "Ваш результат ниже 75%. Рекомендуем пересмотреть курс."
 
-#: .\courses\views.py:218
+#: .\courses\views.py:246
 msgid "Mavjud kurslar topilmadi."
-msgstr ""
+msgstr "Доступные курсы не найдены."
 
-#: .\courses\views.py:234
+#: .\courses\views.py:262
 msgid "Section marked as completed!"
-msgstr ""
+msgstr "Раздел отмечен как завершенный!"

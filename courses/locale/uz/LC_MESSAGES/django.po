@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-30 17:44+0500\n"
+"POT-Creation-Date: 2025-02-07 14:39+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,36 +17,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-#: .\courses\views.py:32
-msgid "Mos keluvchi kurslar topilmadi."
-msgstr ""
 
-#: .\courses\views.py:119
+#: .\courses\views.py:134
 msgid "Bo'lim tugallandi! Endi keyingi darsga kirishingiz mumkin."
-msgstr ""
+msgstr "Bo'lim tugallandi! Endi keyingi darsga kirishingiz mumkin."
 
-#: .\courses\views.py:123
+#: .\courses\views.py:138
 msgid "Bo'lim tugallandi! Siz kursni tugatdingiz."
-msgstr ""
+msgstr "Bo'lim tugallandi! Siz kursni tugatdingiz."
 
-#: .\courses\views.py:155
+#: .\courses\views.py:170
 msgid "Javobingiz saqlandi."
-msgstr ""
+msgstr "Javobingiz saqlandi."
 
-#: .\courses\views.py:183
+#: .\courses\views.py:199
 msgid "Siz testni tugatmadingiz!"
-msgstr ""
+msgstr "Siz testni tugatmadingiz!"
 
-#: .\courses\views.py:197
+#: .\courses\views.py:222
 #, python-format
 msgid ""
 "Sizning ballingiz 75% dan past. Kursni ko'rib chiqishni tavsiya qilamiz."
-msgstr ""
+msgstr "Sizning ballingiz 75% dan past. Kursni ko'rib chiqishni tavsiya qilamiz."
 
-#: .\courses\views.py:218
+#: .\courses\views.py:246
 msgid "Mavjud kurslar topilmadi."
-msgstr ""
+msgstr "Mavjud kurslar topilmadi."
 
-#: .\courses\views.py:234
+#: .\courses\views.py:262
 msgid "Section marked as completed!"
-msgstr ""
+msgstr "Seans tugallandi deb belgilandi!"

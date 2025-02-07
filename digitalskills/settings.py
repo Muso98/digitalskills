@@ -10,8 +10,13 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+import os
 
-ALLOWED_HOSTS = []
+DEBUG = os.getenv("DEBUG", "False") == "True"  # DEBUG qiymatini .env fayldan o‘qish
+
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+
+#ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'modeltranslation',  # Django Model Translation
@@ -63,8 +68,9 @@ WSGI_APPLICATION = 'digitalskills.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
+
 
 
 
