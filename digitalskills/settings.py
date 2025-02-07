@@ -63,9 +63,7 @@ WSGI_APPLICATION = 'digitalskills.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL', 'postgres://digitalskills:12345@localhost:5432/digitalskills')
-    )
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
 
 
