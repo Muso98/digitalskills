@@ -11,7 +11,7 @@ DEBUG=True
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-import os
+SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-default-key")
 
 
 ALLOWED_HOSTS = ['digitalskills.onrender.com', 'localhost', '127.0.0.1']
