@@ -14,12 +14,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-default-key")
 
 
-ALLOWED_HOSTS = ['digitalskills.onrender.com', 'localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = ['digitalskills.uz', 'www.digitalskills.uz', 'localhost', '127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://digitalskills.onrender.com",  # Render yoki hosting domeningiz
+    "https://digitalskills.uz",
+    "https://www.digitalskills.uz",
+    "http://digitalskills.uz",
+    "http://www.digitalskills.uz",
 ]
+
 
 INSTALLED_APPS = [
     'modeltranslation',  # Django Model Translation
