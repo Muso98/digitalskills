@@ -88,6 +88,7 @@ else:
             'PASSWORD': os.getenv('DB_PASSWORD', '12345'),
             'HOST': 'localhost',
             'PORT': '5432',
+
         }
     }
 
